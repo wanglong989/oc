@@ -1,0 +1,33 @@
+extends ../layout
+block content
+    .container
+        .row
+            table.table.table-hover.table-bordered
+                thead
+                tr
+                th 标题
+                th 作者
+                th 录入时间
+                th 简介
+                th.text-center 查看
+                th.text-center 更新
+                th.text-center 删除
+                tbody
+
+                    each item in article_list
+
+                        tr(class="item-id-#{item._id}")
+                        td #{item.title}
+                        td #{item.author}
+                        td #{item.add_time}
+                        td #{item.summary}
+                        td.text-center: a(target="_blank",href="#{static_base_url}/detail/#{item._id}") 查看
+                        td.text-center: a.btn.btn-success.btn-xs(href="/article/update/#{item._id}") 更新
+                        td.text-center
+                            button.btn.btn-danger.btn-xs.del(type="button",data-id="#{item._id}") 删除
+
+
+
+
+
+

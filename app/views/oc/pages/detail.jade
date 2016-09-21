@@ -1,0 +1,19 @@
+extends ../layout
+block content
+    .container
+        .row
+            .col-md-8
+                div #{article.content}
+            .col-lg-4
+                dl.dl-horizontal
+                dt 标题
+                dd #{article.title}
+                dt 作者
+                dd #{article.author}
+                dt 时间
+                dd #{article.add_time}
+                dt 更新时间
+                dd #{moment(article.meta.createAt).format('MM/DD/YYYY')}
+                dt 简介
+                dd #{article.summary}
+

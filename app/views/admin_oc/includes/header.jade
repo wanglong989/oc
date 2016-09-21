@@ -1,0 +1,12 @@
+header
+    .container
+        .pull-right
+            if user
+                span.navbar-link() 欢迎，#{user.name}
+                span &nbsp;|&nbsp;
+                a.navbar-link(href="/user/logout") 退出
+            else
+                a.navbar-link(href="#",data-toggle="modal",data-target="#signinModal") 登录
+        .admin-logo
+            img
+            span.c9.fw.f20 #{title}

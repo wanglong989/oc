@@ -1,0 +1,32 @@
+extends ../layout
+block content
+    .container
+        .row
+            form.form-horizontal(method="post",action="/article/action/add")
+                input(type="hidden",name="article[_id]",value="#{article._id}")
+                .form-group
+                    label.col-lg-1.control-label(for="inputTitle") 标题
+                    .col-lg-11
+                        input#inputTitle.form-control(type="text",name="article[title]",value="#{article.title}")
+                .form-group
+                    label.col-lg-1.control-label(for="inputAuthor") 作者
+                    .col-lg-11
+                        input#inputAuthor.form-control(type="text",name="article[author]",value="#{article.author}")
+                .form-group
+                    label.col-lg-1.control-label(for="inputAdd_time") 时间
+                    .col-lg-11
+                        input#inputAdd_time.form-control(type="date",name="article[add_time]",value="#{article.add_time}")
+                .form-group
+                    label.col-lg-1.control-label(for="inputSummary") 简介
+                    .col-lg-11
+                        textarea#inputSummary.form-control(name="article[summary]",'#{article.summary}')
+                .form-group
+                    label.col-lg-1.control-label(for="inputContent") 内容
+                    .col-lg-11
+                        textarea#inputContent.form-control(name="article[content]",'#{article.content}')
+                .form-group
+                    label.col-lg-1.control-label
+                    .col-lg-11.text-right
+                        button.btn.btn-primary(type="submit") 保存
+
+

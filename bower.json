@@ -1,0 +1,21 @@
+{
+  "name": "cook",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "王龙"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
