@@ -83,7 +83,6 @@ exports.logout = function (req, res) {
 
 exports.showSignup = function (req, res) {
 
-    console.log('signup');
     res.render('user/signup', {
         title: 'user signup'
     })

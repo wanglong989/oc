@@ -16,7 +16,7 @@ module.exports = function (app) {
     app.get('/', Index.index);
 
     //detail page
-    app.get('/detail/:id',User.signinRequired,User.adminRequired,Article.detail);
+    app.get('/detail/:id',Article.detail);
 
 
     //User
