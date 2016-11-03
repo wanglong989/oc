@@ -1,21 +1,19 @@
-.container
-    .row
-        .page-header
-            h1 #{title}
-            small 私厨 主站
-.navbar.navbar-default.navbar-fixed-bottom
+header.header-box
     .container
         .navbar-header
-            a.navbar-brand(href="/") 私厨
+            a.c1.login-box.navbar-brand(href="/") 瞄一眼
         p.navbar-text.navbar-right
             if user
                 span.navbar-link() 欢迎，#{user.name}
                 span &nbsp;|&nbsp;
-                a.navbar-link(href="/user/logout") 退出
+                a.c1.navbar-link(href="/user/logout") 退出
             else
-                a.navbar-link(href="#",data-toggle="modal",data-target="#signupModal") 注册
+                a.c1.navbar-link(href="#",data-toggle="modal",data-target="#signupModal") 注册
                     span &nbsp;|&nbsp;
-                    a.navbar-link(href="#",data-toggle="modal",data-target="#signinModal") 登录
+                    a.c1.navbar-link(href="#",data-toggle="modal",data-target="#signinModal") 登录
+
+.placeholder-height
+
 
 #signupModal.modal.fade
     .modal-dialog

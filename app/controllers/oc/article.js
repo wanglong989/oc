@@ -9,7 +9,7 @@ exports.detail = function (req, res) {
             console.log(err);
         }
         res.render('detail', {
-            title: 'onHome 详情页',
+            title: '瞄一眼 详情页',
             article: article
         })
     });

@@ -9,7 +9,7 @@ exports.index = function (req, res) {
             console.log(err);
         }
         res.render('index', {
-            title: 'onHome 首页 index',
+            title: '瞄一眼',
             article_list: article_list
         })
 

@@ -1,6 +1,51 @@
 body{
     font-weight: lighter;
+    color: #333;
 }
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
     font-weight: lighter;
+}
+.c1{
+    color: #fff;
+}
+.c2{
+    color: #bbb;
+}
+.c3{
+    color: #333;
+}
+.c4{
+    color: #009fff;
+}
+.c5{
+    color: #ff9900;
+}
+.c6{
+    color: #ff4400;
+}
+.header-box{
+    position: absolute;
+    height: 50px;
+    border-bottom: 1px solid #f0f0f0;
+    box-shadow: 1px 1px 4px #ddd;
+    width: 100%;
+    background:-webkit-gradient(linear, 0 0, 0 bottom, from(#ff9900), to(#ff4400));
+    color: #fff;
+}
+
+.login-box{
+    font-size: 24px;
+}
+.placeholder-height{
+    height: 70px;
+}
+
+
+.wrap-left{
+    float: left;
+    width: 820px;
+}
+.wrap-right{
+    float: right;
+    width: 300px;
 }
