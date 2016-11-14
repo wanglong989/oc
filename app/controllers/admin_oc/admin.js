@@ -8,7 +8,7 @@ var static_admin_base_url = 'http://localhost:4000';
 //index page
 exports.index = function(req,res){
     res.render('index',{
-        title:'onHome 管理后台页',
+        title:'鹿灵 管理后台页',
         isIndex:true
     })
 };
@@ -34,7 +34,7 @@ exports.articleUpdate = function(req,res){
     if(id){
         article.findById(id,function(err,article){
             res.render('add',{
-                title:'onHome 管理的后台录入也',
+                title:'鹿灵 管理的后台录入也',
                 article:article
             })
         });
@@ -90,7 +90,7 @@ exports.articleList = function(req,res){
             console.log(err);
         }
         res.render('list',{
-            title:'onHome 管理后列表页',
+            title:'鹿灵 管理后列表页',
             article_list:article_list,
             static_base_url:static_base_url
         })

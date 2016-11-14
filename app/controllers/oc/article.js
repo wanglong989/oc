@@ -9,7 +9,7 @@ exports.detail = function (req, res) {
             console.log(err);
         }
         res.render('detail', {
-            title: '瞄一眼 详情页',
+            title: '鹿灵 详情页',
             article: article
         })
     });

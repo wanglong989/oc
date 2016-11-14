@@ -9,7 +9,7 @@ exports.index = function (req, res) {
             console.log(err);
         }
         res.render('index', {
-            title: '瞄一眼',
+            title: '鹿灵',
             article_list: article_list
         })
 
