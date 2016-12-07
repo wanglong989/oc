@@ -16,21 +16,21 @@ var dbUrl = 'mongodb://localhost/oc';
 monggose.connect(dbUrl);
 
 
-
-var targetUrl = "http://www.meishij.net/zuofa/shanxixiaochiroujia_1.html";
+var aid = 5057831;
+var targetUrl = 'http://36kr.com/p/'+ aid +'.html';
 
 //网站标识 虎嗅网：1   36kr：2   百度百家：3   美食杰 ：4   美食天下 ： 5
-//var url_type = "1";
-//var web_name = '虎嗅网';
+// var url_type = "1";
+// var web_name = '虎嗅网';
 //
-//var url_type = "2";
-//var web_name = '36kr';
+var url_type = "2";
+var web_name = '36kr';
 //
 //var url_type = "3";
 //var web_name = '百度百家';
 
-var url_type = "4";
-var web_name = '美食杰';
+// var url_type = "4";
+// var web_name = '美食杰';
 
 //var url_type = "5";
 //var web_name = '美食天下';
@@ -40,40 +40,62 @@ var _grab, content, title;
 
 var Grab = require('./app/medals/oc_grab');
 
-superagent.get(targetUrl)
-    .end(function (err, res) {
+
+var getArticle = function(){
+    superagent.get(targetUrl).end(function (err, res) {
 
         var $ = cheerio.load(res.text);
-        console.log($('#tongji_title'));
-        title = $('#tongji_title').text();
-        content = $('.editnew').text();
+
+        // console.log(res.text);
+
+        //虎嗅
+        // title = $('title').text();
+        // content = $('.article-content-wrap').text();
+
+        //36kr
+        title = $('title').text();
+        content = $('.content').text();
+
+
         _grab = new Grab({
             content: content,
             title: title,
             web_name: web_name,
-            targetUrl:targetUrl
+            target_url:targetUrl
         });
 
-        _grab.save(function (err, article) {
-            if (err) {
-                console.log(err);
-            }
-            console.log("抓取存储成功！");
-        });
+        console.log(res);
 
+        // if(!!content){
+        //     _grab.save(function (err, article) {
+        //         if (err) {
+        //             console.log(err);
+        //         }
+        //         console.log("抓取存储成功!");
+        //     });
+        // }
+
+        aid = aid - 1;
+        targetUrl = 'http://36kr.com/p/'+ aid +'.html';
+        // getArticle();
+
+        // return true;
     });
+};
+
+getArticle();
 
 
 
 
 
 //
-//
-////虎嗅
-//if (url_type == '1') {
+
+//虎嗅
+// if (url_type == '1') {
 //    content = $('.article-content-wrap').text();
 //    title = $('.t-h1').text();
-//}
+// }
 ////36kr
 //if (url_type == '2') {
 //    content = $('.content-font').html();

@@ -4,6 +4,7 @@ var GrabSchema = new mongoose.Schema({
     title:String,
     web_name:String,
     content:String,
+    target_url:String,
     meta:{
         createAt:{
             type:Date,
